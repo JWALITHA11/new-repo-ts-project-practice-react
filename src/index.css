@@ -1,0 +1,62 @@
+.div-container{
+  border : 1px solid grey;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  width: 500px;
+  /* margin:auto; */
+  padding:20px;
+}
+
+.chidi-container{
+border:1px solid #ccc;
+width:300px;
+display:inline-block;
+margin:10px;
+}
+
+.para{
+  border-bottom:1px solid #ccc; 
+  padding: 10px;
+}
+
+.state-container-1{
+  width:150px;
+  height:100px;
+  border: 1px solid gray;
+  padding: 10px;
+  margin:10px;
+}
+.form-div{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  /* text-align: center; */
+  margin :20px;
+
+}
+
+.form-group{
+  display: flex;
+  padding: 10px;
+  
+  /* justify-content: center; */
+  align-items:center
+}
+
+
+.form{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.input{
+  /* margin-top: 10px; */
+  margin-left: 10px;
+  
+}
+
+.button-fetch{
+  background-color: aqua;
+  padding: 10px;
+}
