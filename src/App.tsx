@@ -3,7 +3,7 @@ import './App.css'
 import Details ,{Status }from './components/Details.tsx';
 import State ,{Counter ,TrailCounter}from './components/State.tsx';
 import Lists , {NumList} from './components/Lists.tsx';
-import Fetching from './components/Fetching.tsx';
+import Fetching  , {EvenDataFetching}from './components/Fetching.tsx';
 import Form from './components/Form.tsx';
 // import { TrailCounter } from './components/State.tsx';
 function App() {
@@ -85,6 +85,7 @@ function App() {
   <TrailCounter />
   <Fetching />
   <Form />
+  <EvenDataFetching />
     </>
   );
 
