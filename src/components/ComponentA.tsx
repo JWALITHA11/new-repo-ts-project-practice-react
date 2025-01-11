@@ -1,8 +1,8 @@
-import {createContext, useState} from 'react';
+import {createContext} from 'react';
 import ComponentD from "./ComponentB";
 export const UserContext = createContext("");
 const ComponentA : React.FC = () => {
-    const[user , setUser] = useState("React");
+    const user= "React";
   return (
     <div className="box">
       
