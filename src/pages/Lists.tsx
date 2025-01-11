@@ -1,3 +1,4 @@
+import {useLayoutEffect, useState,useEffect}from 'react'
 type FruitListProps = {
     fruit : string[];
 }
@@ -43,7 +44,7 @@ const NumList = (props : NumberListProps) => {
    {props.numbers.filter(ele => ele > 50).join(' , ')}
 </div>
  
- <h4>Numbers Greater then 100 :-</h4>
+ <h4>Numbers Greater than 100 :-</h4>
  {numsGreaterthanHunderd.length > 0 ? numsGreaterthanHunderd.join(',') : "There are no numbers that are less than 100"}
 
 <h4>Numbers less than 10 :-</h4>
@@ -55,3 +56,38 @@ const NumList = (props : NumberListProps) => {
 );
 }
 export {NumList};
+
+const Cart : React.FC = () =>{
+   const[operation,setOperation] = useState<number>(0);
+   const addToCart = () =>{
+    setOperation(operation+1);
+   }
+   const removeFromCart = () =>{
+    setOperation(operation-1);
+   }
+   return(
+    <>
+    <div className='cart-container'> 
+    <h4>Your Cart has :  {operation} items</h4>
+    <button type = "button" onClick={addToCart}>Add</button>
+    <button type = "button" onClick = {removeFromCart}>Remove</button>
+    </div>
+    </>
+   )
+}
+export {Cart}
+
+
+const Layout : React.FC = () =>{
+    useLayoutEffect (()=>{
+        console.log("useLayout effect ")
+    })
+    useEffect(()=>{
+        console.log("useeffect");
+    })
+
+    return(
+<></>
+    )
+}
+export  {Layout}

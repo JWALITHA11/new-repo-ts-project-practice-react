@@ -15,3 +15,7 @@ export type DetailsList = {
     data : DetailsList [];
     // user : Chidi [];
   };
+
+  export type slideProps = {
+    url : string;
+  }

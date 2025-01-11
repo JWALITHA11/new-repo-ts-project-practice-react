@@ -1,4 +1,6 @@
 import { DetailsProps} from '../types';
+// import About from '../pages/About';
+import{useState,useMemo} from 'react'
 const Details = (props:DetailsProps) => {
     const data = props.data;
     const listOfUsers = data.map((ele, index) => (
@@ -23,6 +25,7 @@ const Details = (props:DetailsProps) => {
 
   return (
     <>
+    <h4>Details using props </h4>
       {listOfUsers}
       {/* {userList} */}
     </>
@@ -51,9 +54,38 @@ const Status = (props : statusList) =>{
     message = "check the status again" ;
    }
 return(
-
+  <>
+  <h3>Basic example using props</h3>
+ {/* <About /> */}
   <h4>Message - {message}</h4>
+  </>
 )
 
 }
 export {Status} ;
+
+//usememo
+
+const Memo : React.FC = () =>{
+  const[number,setNumber] =useState<number>(10);
+  const[secondState,setsecondState]=useState<boolean>(false);
+  const result = useMemo(()=>{
+    console.log("calculating..")
+    return number * 2;
+  },[number])
+return(
+  <>
+  <h4>useMemo example</h4>
+  <input type='number' value = {number} onChange={(e)=>setNumber(parseInt(e.target.value))} />
+  <p>Result is {result}</p>
+  <button onClick={()=>setsecondState(!secondState)} style={{backgroundColor: secondState ? 'green' : 'red' , color: 'white'}}>
+    Toggle state : {secondState ? 'On' : 'Off'}
+  </button>
+  
+  
+  
+  
+  </>
+)
+}
+export {Memo}

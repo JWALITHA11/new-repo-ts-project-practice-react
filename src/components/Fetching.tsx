@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 type TodoProps = {
     id : number;
     title : string;
@@ -41,36 +41,41 @@ const [data,setData] = useState<TodoProps[]>([]);
 }
 export default Fetching;
 
-const EvenDataFetching : React.FC = () =>{
-  const [filteredData,setEvenData] = useState<TodoProps[]>([])
-  const fetchingData = async () =>{
-    try{
-      let response = await fetch ('https://jsonplaceholder.typicode.com/todos/');
-      let data :TodoProps[]= await response.json();
-      let filteredData :TodoProps[] = data.filter((item) =>(item.id % 2==0));
-      setEvenData(filteredData);
-    }
-    catch(e){
-      console.log(e);
-    }
-    
-  }
-  return (
-    <>
-    <h4>Even data</h4>
-    <ol>
-      {filteredData.map((ele) => (
-        <li key = {ele.id}>
-          <p>Id : {ele.id}</p>
-          <p>Title : {ele.title}</p>
-          <p>Completed : {ele.completed ? "yes" : "no"}</p>
-         </li>
-      ))}
-    </ol>
-    <button type="button" onClick={fetchingData} >Click here for filtered data</button>
-    
-    </>
-  )
-}
-export {EvenDataFetching} ;
-
+// type titleProps = {
+//   title : string;
+// }
+// const Titles : React.FC = () =>{
+//   const[titles,setTitles] =useState<titleProps[]>([])
+//   useEffect(
+//     ()=>{
+//       const fetchingTitles = async () =>{
+//         try{
+//           let response = await fetch('https://jsonplaceholder.typicode.com/todos/');
+//           let details : titleProps[] = await response.json();
+//           let titles  = details.map((ele : titleProps) => ele.title);
+//          setTitles(titles)
+//          console.log(titles);
+//         }
+//         catch(e){
+//           console.log(e);
+//         }
+//       }
+//       fetchingTitles();
+//     },titles)
+//     return(
+//       <>
+//       <h4>All titles are : </h4>
+//       <ul>
+// {titles.map((element,index) =>(
+//  <li key = {index}>{element}</li>
+// )
+ 
+// )}
+       
+ 
+//       </ul>
+      
+//       </>
+//     )
+// }
+// export {Titles};

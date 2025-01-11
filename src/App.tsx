@@ -1,14 +1,26 @@
 import './App.css'
-
-import Details ,{Status }from './components/Details.tsx';
-import State ,{Counter ,TrailCounter}from './components/State.tsx';
-import Lists , {NumList} from './components/Lists.tsx';
-import Fetching  , {EvenDataFetching}from './components/Fetching.tsx';
-import Form from './components/Form.tsx';
+// import { createContext } from 'react';
+import Details ,{Status ,Memo}from './components/Details.tsx';
+import State ,{Counter ,TrailCounter,Toggle,Effect,Reference}from './components/State.tsx';
+import Lists , {NumList , Cart,Layout}from './pages/Lists.tsx';
+import Fetching from './components/Fetching.tsx';// , {EvenDataFetching}
+import Form from './pages/Form.tsx';
+import Navbar from './pages/Navbar.tsx';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+// import NoPage from './pages/NoPage.tsx';
+import Home from './pages/Home.tsx';
+import About from './pages/About.tsx';
+import Blogs from './pages/Blogs.tsx';
+import EvenDataFetching from './pages/EvenFetching.tsx';
+import ComponentA   from './components/ComponentA.tsx';
+import CallbackParent from './components/CallbackParent.tsx';
 // import { TrailCounter } from './components/State.tsx';
-function App() {
-  
-  
+
+function App (){
+
+
+
+
   const details  = [{
     name:"suman",
     age : 23,
@@ -74,6 +86,21 @@ function App() {
   // ]
   return (
     <>
+     
+   
+
+    <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path = '/' element = {<Home />} />
+      <Route path = '/about' element = {<About />} />
+      <Route path = '/blogs' element = {<Blogs />} />
+      {/* <Route path = '*' element = {<NoPage />} /> */}
+      <Route path = '/evendata' element = {<EvenDataFetching />} />
+      <Route path = '/form' element = {<Form />} />
+    
+    </Routes>
+    </BrowserRouter>
   <Details data = {details}  />
   <Lists fruit = {fruits} />
   <NumList numbers = {nums} />
@@ -84,8 +111,18 @@ function App() {
   <Counter />
   <TrailCounter />
   <Fetching />
-  <Form />
-  <EvenDataFetching />
+<Reference />
+  {/* <EvenDataFetching /> */}
+  <Toggle />
+  {/* <Slider /> */}
+  <Cart />
+  <Effect />
+  <Memo />
+<h4>useContext Example</h4>
+ <ComponentA />
+  {/* <Child /> */}
+ <Layout />
+ <CallbackParent />
     </>
   );
 
